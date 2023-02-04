@@ -48,7 +48,7 @@ function Result({ correct }) {
   return (
     <div className='result'>
       <div className='result__text'>Congratulation, you finish the test. You have {correct} correct answers</div>
-      <a href="/">
+      <a href="https://vitaliyzekter.github.io/quiz/">
         <button>Start again</button>
       </a>
     </div>
