@@ -44,13 +44,17 @@ function Game({ step, nextQuestion }) {
   );
 }
 
-function Result({ correct }) {
+function Result({ correct, setStep,setCorrect }) {
+  const startNew = () => {
+    setStep(0);
+    setCorrect(0);
+  }
   return (
     <div className='result'>
       <div className='result__text'>Congratulation, you finish the test. You have {correct} correct answers</div>
-      <a href="https://vitaliyzekter.github.io/quiz/">
-        <button>Start again</button>
-      </a>
+
+      <button onClick={startNew}>Start again</button>
+
     </div>
   );
 }
@@ -70,7 +74,7 @@ function App() {
   return (
     <>
       {
-        step !== questions.length ? <Game step={step} nextQuestion={nextQuestion} /> : <Result correct={correct} />
+        step !== questions.length ? <Game step={step} nextQuestion={nextQuestion} /> : <Result setCorrect={setCorrect} setStep={setStep} correct={correct} />
       }
     </>
   );
